@@ -1,0 +1,123 @@
+.hanoi {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 450px;
+  width: 600px;
+  background-color: #ccf;
+  position: relative;
+}
+
+.base {
+  width: 600px;
+  height: 20px;
+  background: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+}
+
+.tower {
+  position: relative;
+  cursor: pointer;
+}
+
+.tower:hover {
+  background-color: #99f;
+}
+
+.tower::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 200px;
+  bottom: 0;
+  left: 90px;
+  background: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+  border-radius: 10px 10px 0 0;
+}
+
+.disk {
+  position: absolute;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(59, 149, 237) 0%,
+    rgb(7, 91, 173) 90%
+  );
+  height: 35px;
+  width: 180px;
+  border-radius: 15px;
+  margin-left: 10px;
+  z-index: 2;
+  transition: left 0.2s, bottom 0.2s 0.2s;
+  pointer-events: none;
+}
+
+.d1 {
+  width: 60px;
+  margin-left: 70px;
+  background: linear-gradient(
+    107.2deg,
+    rgb(150, 15, 15) 10.6%,
+    rgb(247, 0, 0) 91.1%
+  );
+}
+
+.d2 {
+  width: 90px;
+  margin-left: 55px;
+  background: radial-gradient(
+    circle at 10% 50.5%,
+    rgb(255, 107, 6) 0%,
+    rgb(255, 1, 107) 90%
+  );
+}
+
+.d3 {
+  width: 120px;
+  margin-left: 40px;
+  background: linear-gradient(
+    135deg,
+    rgb(255, 168, 168) 10%,
+    rgb(252, 255, 0) 100%
+  );
+}
+
+.d4 {
+  width: 150px;
+  margin-left: 25px;
+  background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+
+.t1 {
+  left: 0;
+}
+
+.t2 {
+  left: 200px;
+}
+
+.t3 {
+  left: 400px;
+}
+
+.p1 {
+  bottom: 0;
+}
+
+.p2 {
+  bottom: 35px;
+}
+
+.p3 {
+  bottom: 70px;
+}
+
+.p4 {
+  bottom: 105px;
+}
+
+.p5 {
+  bottom: 140px;
+}
+
+.p0 {
+  bottom: 350px;
+}
