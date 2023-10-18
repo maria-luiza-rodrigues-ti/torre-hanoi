@@ -3,7 +3,7 @@ let positions = ["p1", "p2", "p3", "p4", "p5", "p0", "t1", "t2", "t3"];
 
 let movements = [];
 
-function Render() {
+function render() {
   towers.forEach((tower, id) => {
     tower.forEach((disk, position) => {
       let diskClass = document.querySelector(".d" + disk);
@@ -18,7 +18,7 @@ function Render() {
   });
 }
 
-function Move(fromTower, toTower) {
+function move(fromTower, toTower) {
   if (!towers[fromTower].length) return;
 
   let disk = towers[fromTower].pop();
@@ -32,7 +32,7 @@ function Move(fromTower, toTower) {
   let diskClass = document.querySelector(".d" + disk);
   diskClass.classList.add("p0");
   towers[toTower].push(disk);
-  setTimeout(Render, 400);
+  setTimeout(render, 400);
 }
 
 function ClickTower(n) {
@@ -46,23 +46,23 @@ function ClickTower(n) {
 setInterval(() => {
   if (movements.length && movements[movements.length - 1].length === 2) {
     let movement = movements.pop();
-    Move(movement[0], movement[1]);
+    move(movement[0], movement[1]);
   }
 }, 600);
 
-Render();
+render();
 
-function Solve(size, fromTower, toTower) {
+function solve(size, fromTower, toTower) {
   if (size === 1) {
     return movements.unshift([fromTower, toTower]);
   }
 
   let other = 3 - fromTower - toTower;
-  Solve(size - 1, fromTower, other);
+  solve(size - 1, fromTower, other);
   movements.unshift([fromTower, toTower]);
-  Solve(size - 1, other, toTower);
+  solve(size - 1, other, toTower);
 }
 
 setTimeout(() => {
-  Solve(5, 0, 1);
+  solve(5, 0, 1);
 }, 2000);
