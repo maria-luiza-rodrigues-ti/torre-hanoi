@@ -36,7 +36,7 @@ $ git clone https://github.com/maria-luiza-rodrigues-ti/torre-hanoi.git
 $ cd torre-hanoi
 
 # Execute a aplicação
-    Clique no botão inferior Go Live e já irá abrir uma aba no seu navegador padrão
+Clique no botão inferior Go Live e já irá abrir uma aba no seu navegador padrão
 ```
 
 ---
